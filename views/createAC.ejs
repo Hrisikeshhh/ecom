@@ -72,6 +72,11 @@
 <body class="text-on-background">
 <!-- TopNavBar: Execution of JSON Brand Anchor -->
 <!-- Suppression logic: Navigation shell is suppressed for transactional "Create Account" screen to prioritize the focus canvas -->
+ <% if(error.length>0){ %>
+    <span>
+        <%= error %>
+    </span>
+ <% } %>
 <header class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl">
 <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
 <div class="text-2xl font-black tracking-tighter text-black">ARCHIVE</div>
@@ -99,26 +104,26 @@
 <h1 class="text-4xl font-black tracking-tighter text-primary mb-3">Start Your Archive.</h1>
 <p class="text-on-surface-variant text-lg">Create an account to save your favorite pieces and track orders.</p>
 </div>
-<form class="space-y-8">
+<form class="space-y-8" method="post" action="/users/register">
 <div class="grid grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-[10px] font-bold tracking-widest uppercase text-outline">Full name</label>
-<input class="minimal-input" placeholder="Enter first name" type="text"/>
+<input class="minimal-input" placeholder="Enter first name" type="text" name="fullName"/>
 </div>
 <div class="flex flex-col gap-2">
 </div>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-[10px] font-bold tracking-widest uppercase text-outline">EMAIL ADDRESS</label>
-<input class="minimal-input" placeholder="name@domain.com" type="email"/>
+<label class="text-[10px] font-bold tracking-widest uppercase text-outline" >EMAIL ADDRESS</label>
+<input class="minimal-input" placeholder="name@domain.com" name="email" type="email"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-[10px] font-bold tracking-widest uppercase text-outline">PASSWORD</label>
-<input class="minimal-input" placeholder="••••••••" type="password"/>
+<input class="minimal-input" placeholder="••••••••" type="password" name="password"/>
 </div>
-<button class="w-full py-5 bg-primary text-on-primary font-bold tracking-widest uppercase text-sm hover:opacity-90 transition-all active:scale-[0.98]" type="submit">
-                        CREATE ACCOUNT
-                    </button>
+<input class="w-full py-5 bg-primary text-on-primary font-bold tracking-widest uppercase text-sm hover:opacity-90 transition-all active:scale-[0.98]" type="submit" value="CREATE ACCOUNT" />
+                       
+
 </form>
 <div class="mt-10 space-y-4">
 <div class="relative flex items-center py-2">
@@ -140,7 +145,7 @@
 <div class="mt-12 text-center">
 <p class="text-stone-500 font-medium">
                         Already have an account? 
-                        <a class="text-black font-bold underline underline-offset-4 hover:opacity-70 transition-opacity" href="#">Sign in</a>
+                        <a class="text-black font-bold underline underline-offset-4 hover:opacity-70 transition-opacity" href="/login">Sign in</a>
 </p>
 </div>
 </div>

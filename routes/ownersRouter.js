@@ -20,5 +20,8 @@ let{fullName, email, password} = req.body;
    res.status(201).send(createdOwner);
 })
 
-
+router.get("/admin", function(req, res){
+  let success = req.flash("success")
+   res.render('adminPanel',{success});
+})
 module.exports = router;

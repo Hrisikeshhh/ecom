@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e3e2e0",
+              "error-container": "#ffdad6",
+              "primary": "#000000",
+              "on-primary-fixed": "#1c1b1b",
+              "on-error": "#ffffff",
+              "tertiary-container": "#1c1c16",
+              "surface-variant": "#e3e2e0",
+              "secondary": "#7c5730",
+              "surface-container-high": "#e9e8e6",
+              "background": "#faf9f7",
+              "on-secondary-fixed": "#2c1600",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#86847c",
+              "primary-container": "#1c1b1b",
+              "inverse-on-surface": "#f1f1ef",
+              "outline-variant": "#c4c7c7",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#faf9f7",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#858383",
+              "on-secondary-container": "#79542d",
+              "on-background": "#1a1c1b",
+              "surface": "#faf9f7",
+              "on-secondary-fixed-variant": "#61401b",
+              "outline": "#747878",
+              "on-tertiary-fixed": "#1c1c16",
+              "primary-fixed": "#e5e2e1",
+              "surface-container-low": "#f4f3f1",
+              "tertiary-fixed": "#e6e2d9",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1c1b",
+              "inverse-primary": "#c8c6c5",
+              "surface-dim": "#dadad8",
+              "surface-container": "#efeeec",
+              "secondary-fixed": "#ffdcbd",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed-dim": "#cac6be",
+              "on-surface-variant": "#444748",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#484740",
+              "surface-tint": "#5f5e5e",
+              "secondary-fixed-dim": "#eebd8e",
+              "secondary-container": "#fdcb9b",
+              "tertiary": "#000000",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#474746"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white uppercase">ARCHIVE</div>
+<div class="hidden md:flex items-center space-x-10 font-manrope tracking-tight font-medium">
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-black dark:hover:text-white transition-colors duration-300" href="#">Home</a>
+<a class="text-black dark:text-white font-bold border-b-2 border-stone-800 dark:border-stone-200 pb-1 hover:text-black dark:hover:text-white transition-colors duration-300" href="#">Products</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-black dark:hover:text-white transition-colors duration-300" href="#">My Account</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-black dark:hover:text-white transition-colors duration-300" href="#">Cart</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="scale-95 active:opacity-70 transition-all text-black dark:text-white">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="scale-95 active:opacity-70 transition-all text-black dark:text-white relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto min-h-screen">
+<div class="flex flex-col md:flex-row gap-16">
+<!-- Sidebar Navigation/Filter -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-40">
+<h3 class="font-headline text-xs font-bold tracking-[0.2em] uppercase text-on-surface-variant mb-8">Collections</h3>
+<ul class="space-y-6">
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-headline text-lg tracking-tight">Popular</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-headline text-lg tracking-tight">New</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-primary transition-colors" href="#">
+<span class="font-headline text-lg font-bold tracking-tight">All Products</span>
+<span class="material-symbols-outlined text-sm opacity-100" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-headline text-lg tracking-tight">Discounted Products</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</li>
+</ul>
+<div class="mt-20 pt-10 border-t border-outline-variant/10">
+<h3 class="font-headline text-xs font-bold tracking-[0.2em] uppercase text-on-surface-variant mb-6">Material</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-primary hover:text-on-primary transition-all">Leather</span>
+<span class="px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-primary hover:text-on-primary transition-all">Suede</span>
+<span class="px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-primary hover:text-on-primary transition-all">Canvas</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content: Product Grid -->
+<div class="flex-grow">
+<header class="mb-16">
+<h1 class="text-5xl md:text-7xl font-headline font-black tracking-tighter mb-4">THE ARCHIVE</h1>
+<p class="text-on-surface-variant max-w-xl font-body leading-relaxed">
+                        Curated artifacts of utility and elegance. Each piece is designed to withstand the passage of time, crafted from the finest materials with architectural precision.
+                    </p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
+<!-- Card 1 -->
+
+
+
+<% products.forEach((product)=>{ %>
+        <div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a high-end minimalist black leather briefcase resting on a white stone surface with soft architectural shadows" src="data:image/png;base64,<%= product.image.toString('base64')%>"/>
+<div class="absolute top-4 right-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Limited</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors"><%= product.name %></h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">discount <%= product.discount %>%</p>
+</div>
+<span class="font-headline text-lg font-medium">$<%= product.price %></span>
+</div>
+        </div>
+
+<% }) %>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Card 2 -->
+<!-- <div class="group cursor-pointer mt-12 md:mt-0">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury dark emerald green velvet tote bag hanging on a minimalist brass hook against a beige plaster wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCne-0rc1EueBbtN84PpCD3Fwd3VWdoFdcUnyAdBK09O50FZ4rlTSrn-lCCCSPbtf-iR3LErzkWoKUXhLQV3bm-NOIWavj6D25imiyl3DZ4NCocrhPAYHuxkEk1PrYlicGa2JCvcCcceQkFocBwsOZy-tJzs8jajn9Oe7PWT_RDQavtU4wo2VXjA3SJCrHyFx-PXhB27xX4YN0ovGQQFuu3t-t6frNSieZj2j07pSr3AHi2ZgWrKN9lsJM_4A294XBlA67o2Qghhf4_"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors">Minimalist Weekender</h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">Midnight Charcoal</p>
+</div>
+<span class="font-headline text-lg font-medium">$890</span>
+</div>
+</div> -->
+<!-- Card 3 -->
+<!-- <div class="group cursor-pointer lg:mt-24">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sculptural smooth tan leather handbag with clean lines and circular handle on a minimalist wooden pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDi2bylDBRhparbZ1L5umj4aOZs8AOXxBVFPRM0YEn8AEcP8FGFpMSIhDcVI_aoP_u0xsgdPZ9ifp-kBVdFl7kU9-HvWIRVOEKD5C5YG1bx5qrHaJEbLLYDBG9JhC0A-E20xeySUajB1bCwyzNMJOSzQLH7ZGTHTWkmdByyEBrqQUzK0shBFVUw1ldP4gyOfklaaZhg2VVlbTvUdqtg3avg2IzX-KMYrY-qyQ4K35AltQejfrj1l_E9VlMmiPMDL1DzRRLnc0CitUo"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors">The Sculptor Tote</h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">Raw Sienna</p>
+</div>
+<span class="font-headline text-lg font-medium">$1,400</span>
+</div>
+</div> -->
+<!-- Card 4 -->
+<!-- <div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium slate grey pebbled leather backpack for professionals with silver hardware on a modern grey concrete surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdEJ_dB30KiUPDmBwghiGQJ4Na5A52gmKpHxJV-nTfBrr3kxcQTTrFaliTWHxPl_y8n8SL34JcOaEsxkcI34zsyqKLL0isyKp9MIEK9O3tbLczxmuxxaBHsCJ8COSRq0bXjg83MMna2jTeyud0sHzPd-i_82ZmXGtKGsBBJFX8JXIllL-XtxLmk6mxe9wPgJVSvGMddTk8xaPTr8vX9pEBZfbth-7NC4A4LEzzz6IT8nKOZB4kiBmqTlVSqMd4eFeAIaCF4FxQ_its"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors">Standard Issue Pack</h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">Obsidian Pebble</p>
+</div>
+<span class="font-headline text-lg font-medium">$720</span>
+</div>
+</div> -->
+<!-- Card 5 -->
+<!-- <div class="group cursor-pointer md:mt-12">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Bespoke artisan leather duffle bag in rich dark mahogany resting on an old velvet bench with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_3cHybFgOCoWn9bGwO4aY0URa69CvpYqZqfn-Q18PfaIGAWenTbXcgYpR7udbBmJMfG0aiarSuhxZO70w2MSS0TeNDZ_7n-6e-_OrFx13krWHFk3l6tCZ7t4Ng_o-H9rveoJR03nRPwHBwV7m_GnBcUb8Z4W-nTkzFegS8Bg8j3zhac8jXeR5jGb5yTD1Wnf9QXHJWmbrY4ph2I_s-B6Z8I8jfxTceAidEH6V3Kf7oPxJqHnlOlWPiBl5bECCFDiymEV1gd1posXd"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors">No. 08 Carry-All</h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">Deep Mahogany</p>
+</div>
+<span class="font-headline text-lg font-medium">$2,100</span>
+</div>
+</div> -->
+<!-- Card 6 -->
+<!-- <div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exquisite cream-colored leather clutch with minimalist gold clasp on a silk draped background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcTE_QLA7-puunI-bQw9MW3GcctiAKHsdTtPhLEgR9e14TY3xzFXz5nZcitlD6eicYDx3vySUvpW_cGnlk1vmiSkGTAlgVAI6VoVq4BoeqjayreXRKwKwOhT0oFJ6zvk9w7bUNBlZVnwF3yxhYUloGrQiyN3Xau8J7EL7aD9jKfy_Rls3Aeic97cyU0-y5Gpda8pPEjWO-inOoi3Frrx6UYiuXC3xRf51WSPcscxMsFb8vJ3IkKac3aBqaO15ixWVuZjzieS2u0o_T"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase px-3 py-1">New Arrival</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-1 group-hover:text-secondary transition-colors">Monolith Clutch</h3>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant">Alabaster Leather</p>
+</div>
+<span class="font-headline text-lg font-medium">$550</span>
+</div>
+</div> -->
+</div>
+<div class="mt-32 text-center">
+<button class="bg-primary text-on-primary px-12 py-5 font-headline font-bold tracking-widest uppercase hover:opacity-90 transition-opacity">
+                        Load More Artifacts
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-900 w-full mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-black dark:text-white tracking-widest">ARCHIVE</div>
+<p class="text-stone-500 dark:text-stone-400 font-manrope text-sm leading-relaxed max-w-xs">
+                    Redefining luxury through architectural permanence and uncompromising craft.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-manrope text-xs font-black tracking-widest uppercase text-black dark:text-white">Shop</h4>
+<ul class="space-y-2 font-manrope text-sm tracking-widest uppercase text-stone-500 dark:text-stone-400">
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">Collections</a></li>
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">New In</a></li>
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">Bespoke</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-manrope text-xs font-black tracking-widest uppercase text-black dark:text-white">Legal</h4>
+<ul class="space-y-2 font-manrope text-sm tracking-widest uppercase text-stone-500 dark:text-stone-400">
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">Terms</a></li>
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">Privacy</a></li>
+<li><a class="hover:text-stone-800 dark:hover:text-stone-200 underline-offset-4 hover:underline transition-opacity" href="#">Shipping Info</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-manrope text-xs font-black tracking-widest uppercase text-black dark:text-white">Newsletter</h4>
+<div class="flex border-b border-stone-300 dark:border-stone-700 pb-2">
+<input class="bg-transparent border-none focus:ring-0 w-full text-xs font-manrope tracking-widest placeholder:text-stone-400" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="material-symbols-outlined text-stone-400 hover:text-black dark:hover:text-white transition-colors" data-icon="arrow_right_alt">arrow_right_alt</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-stone-200 dark:border-stone-800 text-center">
+<span class="font-manrope text-[10px] tracking-widest uppercase text-stone-400">© 2024 ARCHIVE. ALL RIGHTS RESERVED.</span>
+</div>
+</footer>
+</body></html>
